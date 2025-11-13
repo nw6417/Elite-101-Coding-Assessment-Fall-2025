@@ -1,11 +1,3 @@
-if __name__ == "__main__":
-    # You can use this space to test your functions
-    pass
-show_available_books(library_books)
-print("---")
-search_books(library_books, "fantasy")
-print("---")
-checkout_book(library_books, "B1")
 from library_books import library_books
 from datetime import datetime, timedelta
 
@@ -70,7 +62,7 @@ def return_book(books, book_id):
 # TODO: Create a function to list all overdue books
 # A book is overdue if its due_date is before today AND it is still checked out
 
-ef list_overdue_books(books):
+def show_available_books(books):
     today = datetime.today().date()
     overdue = []
     for book in books:
@@ -98,7 +90,7 @@ class Book:
         self.available = available
         self.due_date = due_date
         self.checkouts = checkouts
-     def checkout(self):
+    def checkout(self):
         if self.available:
             self.available = False
             due = datetime.today() + timedelta(weeks=2)
@@ -157,6 +149,15 @@ def menu(library):
         else:
             print("Invalid choice.")
 
+
+if __name__ == "__main__":
+    # You can use this space to test your functions
+    pass
+show_available_books(library_books)
+print("---")
+search_books(library_books, "fantasy")
+print("---")
+checkout_book(library_books, "B1")
 
 # -------- Optional Advanced Features --------
 # You can implement these to move into Tier 4:
